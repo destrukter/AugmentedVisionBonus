@@ -1,0 +1,9 @@
+{
+  "marker": "assets/markers/test.jpg",
+  "model": "assets/models/cube.fbx",
+  "camera": {
+    "device": 0,
+    "width": 1280,
+    "height": 720
+  }
+}
