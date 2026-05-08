@@ -12,7 +12,7 @@ Key technical responsibilities include:
 A core focus of the project is **modularity**, ensuring the system can be extended or adapted easily.
 
 Ultimately, the application should implement all fundamental building blocks of augmented reality technology.
-
+<!--
 ---
 
 # Milestones
@@ -23,6 +23,15 @@ Ultimately, the application should implement all fundamental building blocks of 
 4. Track image in camera view  
 5. Render `.fbx` model on top of the tracked image correctly  
 6. Update model position when camera or image marker moves  
+-->
+--- 
+
+# MVPs
+1. Load webcam feed, upload marker and extract features
+2. Detect marker in scene and draw bounding box
+3. Pose extimation and according 3d axis rendering 
+4. Upload fbx, render and align cube on marker
+5. Render fbx instead of cube and have stable real time tracking
 
 ---
 
