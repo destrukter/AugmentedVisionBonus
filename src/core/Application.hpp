@@ -1,12 +1,17 @@
+#include <opencv2/opencv.hpp>
+
 class Application{
-
     public:
-    void init();
+        void init();
+        void start();
 
-    void running();
+    private:
+        cv::Mat frame;
+        bool isRunning;
+        const std::string windowName = "ARTracker - Webcam Feed";
+        cv::VideoCapture camera;
 
-    void start();
-
-    void quit();
+        void quit();
+        void running();
 
 };

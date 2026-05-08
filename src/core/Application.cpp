@@ -1,15 +1,11 @@
 #include <Application.hpp>
-#include <opencv2/opencv.hpp>
 
 void Application::init(){
-    cv::VideoCapture camera(0);
+    camera =  cv::VideoCapture (0);
     if (!camera.isOpened()) {
         std::cerr << "Error: Could not open webcam (device 0)." << std::endl;
-        return 1;
+        return;
     }
-
-    cv::Mat frame;
-    const std::string windowName = "ARTracker - Webcam Feed";
 }
 
 void Application::start(){
@@ -17,7 +13,7 @@ void Application::start(){
 
     std::cout << "Webcam started. Press 'q' or ESC to exit." << std::endl;
 
-    bool isRunning = true;
+    isRunning = true;
     while (isRunning) {
         running();
     }
@@ -28,15 +24,16 @@ void Application::start(){
 
 void Application::running(){
     if (!camera.read(frame) || frame.empty()) {
-            std::cerr << "Warning: Failed to read frame from webcam." << std::endl;
-            break;
-        }
+        std::cerr << "Warning: Failed to read frame from webcam." << std::endl;
+        isRunning = false;
+        return;
+    }
 
-        cv::imshow(windowName, frame);
-        const int key = cv::waitKey(1);
-        if (key == 27 || key == 'q' || key == 'Q') {
-            quit();
-        }
+    cv::imshow(windowName, frame);
+    const int key = cv::waitKey(1);
+    if (key == 27 || key == 'q' || key == 'Q') {
+        quit();
+    }
 }
 
 void Application::quit(){
