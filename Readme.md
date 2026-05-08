@@ -1,17 +1,66 @@
-Vision: 
-We want to develop an application that tracks an image in a scene and renders a 3d model on top of it. The image and 3d model should be configurable for modular usage. There are libraries like Vuforia (for unity) that already do this, we want to create something similar but as a standalone app. We need to take care of feature detection for the uploaded image, pose estimation, and then real-time rendering to create the augmented experience. We especially want to focus on the modularity of the application. With the app we need to implement all the fundamental building blocks of augmented reality technology. 
+# Vision
 
-Milestones: 
-Upload an image and a corresponding fbx file. 
-Extract image features. 
-Detect image in camera view. 
-Track image in camera view. 
-Render fbx file on top of tracked image correctly. 
-Update model position when camera or image-marker is moved. 
+We want to develop an application that tracks an image in a scene and renders a 3D model on top of it. Both the image and the 3D model should be configurable to allow modular usage.
 
-Technologies: 
-C++ 
-OpenCV 
-OGRE3D for rendering 
-Eigen for math 
-Assimp for model loading(included in OGRE3D)
+While similar solutions already exist (e.g., Vuforia for Unity), the goal here is to build a standalone application with equivalent functionality.
+
+Key technical responsibilities include:
+- Feature detection for uploaded images
+- Pose estimation
+- Real-time rendering for an augmented reality experience
+
+A core focus of the project is **modularity**, ensuring the system can be extended or adapted easily.
+
+Ultimately, the application should implement all fundamental building blocks of augmented reality technology.
+
+---
+
+# Milestones
+
+1. Upload an image and a corresponding `.fbx` file  
+2. Extract image features  
+3. Detect image in camera view  
+4. Track image in camera view  
+5. Render `.fbx` model on top of the tracked image correctly  
+6. Update model position when camera or image marker moves  
+
+---
+
+# Technologies
+
+- C++
+- OpenCV
+- OGRE3D (rendering engine)
+- Eigen (linear algebra / math)
+- Assimp (model loading, included via OGRE3D)
+
+---
+
+# Requirements
+
+## OpenCV
+```bash
+sudo apt install -y libopencv-dev
+```
+## Eigen3
+```bash
+sudo apt install -y libeigen3-dev
+```
+## Assimp
+```bash
+sudo apt install -y libassimp-dev
+```
+## OGRE3D
+```bash
+sudo apt install -y libogre-1.12-dev
+```
+
+---
+
+# How to Run
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build .
+./ARTracker
+```
