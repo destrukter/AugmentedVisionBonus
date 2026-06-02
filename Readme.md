@@ -42,6 +42,7 @@ Ultimately, the application should implement all fundamental building blocks of 
 - OGRE3D (rendering engine)
 - Eigen (linear algebra / math)
 - Assimp (model loading, included via OGRE3D)
+- ImGUI for UI interactions
 
 ---
 
