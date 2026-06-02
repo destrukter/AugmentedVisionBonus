@@ -10,6 +10,7 @@ class Application{
         bool isRunning;
         const std::string windowName = "ARTracker - Webcam Feed";
         cv::VideoCapture camera;
+        //AssetManager assetManager;  
 
         void quit();
         void running();
