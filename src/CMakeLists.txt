@@ -18,7 +18,7 @@ find_package(assimp REQUIRED)
 # OGRE has different package names depending on platform/distros.
 find_package(OGRE QUIET)
 if(NOT OGRE_FOUND)
-    find_package(Ogre REQUIRED)
+    find_package(Ogre QUIET)
 endif()
 
 target_link_libraries(ARTracker
@@ -26,6 +26,7 @@ target_link_libraries(ARTracker
         ${OpenCV_LIBS}
         Eigen3::Eigen
         assimp::assimp
+        imgui
 )
 
 if(TARGET OgreMain)

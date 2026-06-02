@@ -1,18 +1,21 @@
 #include <opencv2/opencv.hpp>
+#include <GLFW/glfw3.h>
 
-class Application{
-    public:
-        void init();
-        void start();
+class Application {
+public:
+    void init();
+    void start();
 
-    private:
-        cv::Mat frame;
-        bool isRunning;
-        const std::string windowName = "ARTracker - Webcam Feed";
-        cv::VideoCapture camera;
-        //AssetManager assetManager;  
+private:
+    cv::Mat frame;
+    bool isRunning = false;
+    const std::string windowName = "ARTracker";
+    cv::VideoCapture camera;
 
-        void quit();
-        void running();
+    GLFWwindow* window = nullptr;
+    unsigned int cameraTexture = 0;
 
+    void quit();
+    void running();
+    void uploadFrameToTexture();
 };
