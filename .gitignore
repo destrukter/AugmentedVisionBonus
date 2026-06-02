@@ -76,6 +76,11 @@ vgcore.*
 *~
 
 # =========================
+# Downloaded package files
+# =========================
+*.deb
+
+# =========================
 # Optional: local dependency builds
 # =========================
 external/build/
