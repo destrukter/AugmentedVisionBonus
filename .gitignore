@@ -11,7 +11,7 @@
 # =========================
 # Build outputs (C++ / CMake)
 # =========================
-build/
+build*/
 cmake-build-*/
 out/
 bin/
