@@ -1,5 +1,3 @@
-#include <AssimpModelLoader.hpp>
-
 class AssetManager{
     public:
         //json datei
@@ -8,5 +6,4 @@ class AssetManager{
         //remove assets
         //add assets on runtime?
     private:
-        IModelLoader modelLoader;
 };
