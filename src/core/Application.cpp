@@ -6,6 +6,11 @@ void Application::init(){
         std::cerr << "Error: Could not open webcam (device 0)." << std::endl;
         return;
     }
+
+    std::cout << "Camera opened. Backend: " << camera.getBackendName()
+              << ", reported resolution: "
+              << camera.get(cv::CAP_PROP_FRAME_WIDTH) << "x"
+              << camera.get(cv::CAP_PROP_FRAME_HEIGHT) << std::endl;
 }
 
 void Application::start(){
@@ -28,6 +33,20 @@ void Application::running(){
         std::cerr << "Warning: Failed to read frame from webcam." << std::endl;
         isRunning = false;
         return;
+    }
+
+    if (!frameDiagnosticsLogged) {
+        const cv::Scalar mean = cv::mean(frame);
+        std::cout << "First frame: " << frame.cols << "x" << frame.rows
+                  << ", channels=" << frame.channels()
+                  << ", mean(BGR)=[" << mean[0] << ", " << mean[1] << ", "
+                  << mean[2] << "]" << std::endl;
+        if (mean[0] < 1.0 && mean[1] < 1.0 && mean[2] < 1.0) {
+            std::cout << "  -> Frame is essentially black. The camera is "
+                         "delivering empty frames (wrong device, in use by "
+                         "another app, or no signal)." << std::endl;
+        }
+        frameDiagnosticsLogged = true;
     }
 
     drawUi(frame);

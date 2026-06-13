@@ -19,6 +19,7 @@ class Application{
         // will later drive image / .fbx uploads through the AssetManager.
         const cv::Rect uploadButtonRect{20, 20, 160, 48};
         bool uploadButtonHovered = false;
+        bool frameDiagnosticsLogged = false;
 
         void quit();
         void running();
