@@ -1,0 +1,27 @@
+{
+  "camera": {
+    "device": 0,
+    "resolution": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "markers": [
+    {
+      "id": "marker_1",
+      "src": "assets/markers/code.jpg"
+    }
+  ],
+  "models": [
+    {
+      "id": "model_1",
+      "src": "assets/models/cube.fbx"
+    }
+  ],
+  "bindings": [
+    {
+      "markerId": "marker_1",
+      "modelId": "model_1"
+    }
+  ]
+}
