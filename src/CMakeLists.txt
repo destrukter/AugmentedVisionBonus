@@ -1,6 +1,7 @@
 set(ARTRACKER_SOURCES
     main.cpp
     core/Application.cpp
+    assets/AssetManager.cpp
 )
 
 add_executable(ARTracker ${ARTRACKER_SOURCES})
@@ -9,6 +10,7 @@ target_include_directories(ARTracker
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/core
+        ${CMAKE_CURRENT_SOURCE_DIR}/assets
 )
 
 find_package(OpenCV REQUIRED)
